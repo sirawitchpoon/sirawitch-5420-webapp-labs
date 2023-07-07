@@ -1,0 +1,9 @@
+table, td, th {
+    border: 1px solid black;
+    border-collapse: separate;
+    text-align: center;
+}
+h5 {
+    text-align: center;
+    margin-bottom: -2;
+}
