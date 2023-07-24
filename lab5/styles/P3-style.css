@@ -1,0 +1,11 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 25vw);
+    height: 750px;
+  }
+  
+  .grid {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: blue;
+  }
