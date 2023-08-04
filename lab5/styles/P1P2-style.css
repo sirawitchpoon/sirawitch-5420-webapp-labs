@@ -1,0 +1,22 @@
+@media (min-width: 375px) {
+    body {
+        font-size: 14px;
+    }
+}
+/*Responsive for iPhone SE*/
+
+@media (min-width: 768px) {
+    body {
+        font-size: 22px;
+    }
+}
+/*Responsive for iPad Mini*/
+
+body {
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
