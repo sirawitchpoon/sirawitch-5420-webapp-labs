@@ -11,8 +11,8 @@
     </style>
 </head>
 <body>
-    <h1 id="name"></h1>
-    <a id="github-link" target="_blank" href="">GitHub Profile</a><br><br>
+    <h1 id="name" target="_blank" href=""></h1>
+    <br><br>
     <img id="avatar" src="" alt="GitHub Avatar">
     
     <script>
@@ -23,11 +23,9 @@
             .then(data => {
                 // Display name, GitHub link, and avatar
                 let nameElement = document.getElementById("name");
-                let githubLinkElement = document.getElementById("github-link");
                 let avatarElement = document.getElementById("avatar");
 
                 nameElement.textContent = data.name;
-                githubLinkElement.href = data.html_url;
                 avatarElement.src = data.avatar_url;
 
                 // Add a click event to open the GitHub profile in a new tab
