@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>643040542-0 Lab 7 Problem 1</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="name"></h1>
+    <a id="github-link" target="_blank" href="">GitHub Profile</a><br><br>
+    <img id="avatar" src="" alt="GitHub Avatar">
+    
+    <script>
+        const username = "sirawitchpoon"; // Replace with your GitHub username
+
+        fetch(`https://api.github.com/users/${username}`)
+            .then(response => response.json())
+            .then(data => {
+                // Display name, GitHub link, and avatar
+                let nameElement = document.getElementById("name");
+                let githubLinkElement = document.getElementById("github-link");
+                let avatarElement = document.getElementById("avatar");
+
+                nameElement.textContent = data.name;
+                githubLinkElement.href = data.html_url;
+                avatarElement.src = data.avatar_url;
+
+                // Add a click event to open the GitHub profile in a new tab
+                nameElement.addEventListener("click", () => {
+                    window.open(data.html_url, "_blank");
+                });
+            })
+            .catch(error => {
+                console.error("Error fetching data from GitHub API:", error);
+            });
+    </script>
+</body>
+</html>
