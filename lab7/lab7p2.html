@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>643040542-0 Lab7 Problem 2</title>
+    <style>
+        body {
+            font-family: 'Ubuntu', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Reading Students Information</h2>
+    <ol id="students"></ol>
+    <script>
+        fetch('files/students.json')
+            .then(response => {
+                return response.json();
+            }).then(data => {
+                const studentsData = data.wclass;
+
+                const studentsContainer = document.getElementById("students");
+                for (const item of studentsData) {
+                    const student = item.student;
+                    const studentInfo = document.createElement("li");
+                    studentInfo.innerHTML = `${student["@attributes"].id} <strong> ${student.name} </strong> has skills <i> ${student.skill} </i>`;
+                    studentsContainer.appendChild(studentInfo);
+                }
+            }).catch(err => {
+                console.error("Error fetching data", err);
+            })
+    </script>
+</body>
+
+</html>

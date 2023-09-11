@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>643040542-0 Lab7 Problem 3</title>
+    <style>
+        body {
+            font-family: 'Ubuntu', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Restaurant Information</h1>
+    <ol id="restaurants"></ol>
+    <script>
+        fetch('files/places.json')
+            .then(response => {
+                return response.json();
+            }).then(data => {
+                const restaurantData = data.results;
+
+                const restaurantContainer = document.getElementById("restaurants");
+                for (const item of restaurantData) {
+                    let restaurantList = document.createElement("li");
+                    let divName = document.createElement("div");
+                    let divLocation = document.createElement("div");
+                    divName.textContent = 'name =  ' + item.name
+                    divLocation.textContent = 'location = ' + item.geometry.location.lat + " " +  item.geometry.location.lng;
+                    divName.style.color = "blue";
+                    divLocation.style.color = "green";
+                    restaurantList.appendChild(divName);
+                    restaurantList.appendChild(divLocation);
+                    restaurantContainer.appendChild(restaurantList);
+                }
+            }).catch(err => {
+                console.error("Error fetching data", err);
+            })
+    </script>
+</body>
+
+</html>
