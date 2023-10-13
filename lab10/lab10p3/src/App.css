@@ -1,0 +1,95 @@
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+a {
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  height: 300px;
+}
+
+p {
+  text-align: center;
+}
+
+.nextPrevButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.nextButton {
+  margin: 20px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: greenyellow;
+}
+
+.previousButton {
+  margin: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: orange;
+}
+
+.showFollowerButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;/* Adjust the height as needed */
+}
+
+
+.showFollowersButton {
+  background-color: lightblue;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
